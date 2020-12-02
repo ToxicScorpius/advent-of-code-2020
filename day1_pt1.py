@@ -17,7 +17,7 @@ with open("day1_input.txt") as file:
 #     xy_sum = inputs_list[x] + inputs_list[y]
 
 # Better algorithm
-for x, y in itertools.product(inputs_list, repeat=2):
+for x, y in itertools.combinations(inputs_list, 2):
     if x + y == 2020:
         xy_sum = x + y
         product = x * y
