@@ -1,22 +1,27 @@
-inputs_list = []
+import itertools
 
 with open("day1_input.txt") as file:
-    for line in file:
-        line = int(line.strip())
-        inputs_list.append(line)
+    inputs_list = [int(line.strip()) for line in file]
 
-xy_sum = 0
-x, y = 0, 0
+# First algorithm
+# xy_sum = 0
+# x, y = 0, 0
+#
+# while xy_sum != 2020:
+#     if y == len(inputs_list) - 1:   # If y is the last number
+#         x += 1
+#         y = 0
+#     else:
+#         y += 1
+#
+#     xy_sum = inputs_list[x] + inputs_list[y]
 
-while xy_sum != 2020:
-    if y == len(inputs_list) - 1:   # If y is the last number
-        x += 1
-        y = 0
-    else:
-        y += 1
-
-    xy_sum = inputs_list[x] + inputs_list[y]
-
-product = inputs_list[x] * inputs_list[y]
-print(f"{inputs_list[x]} + {inputs_list[y]} = {xy_sum}")
-print(f"{inputs_list[x]} * {inputs_list[y]} = {product}")
+# Better algorithm
+for x, y in itertools.product(inputs_list, inputs_list):
+    if x + y == 2020:
+        xy = [x, y]
+        xy_sum = x + y
+        product = x * y
+        print(f"{xy[0]} + {xy[1]} = {xy_sum}")
+        print(f"{xy[0]} * {xy[1]} = {product}")
+        break
