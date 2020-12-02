@@ -9,9 +9,9 @@ n_correct_pwd = 0
 for line in strings_list:
     groups_p = re.match(regex, line)
     if groups_p is not None:
-        min_n, max_n, char, pwd = groups_p.groups()
-        min_n, max_n = int(min_n), int(max_n)
-        if max_n >= pwd.count(char) >= min_n:
+        pos1, pos2, char, pwd = groups_p.groups()
+        pos1, pos2 = int(pos1) - 1, int(pos2) - 1
+        if (char == pwd[pos1]) ^ (char == pwd[pos2]):
             n_correct_pwd += 1
 
 print(n_correct_pwd)
