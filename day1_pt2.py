@@ -20,11 +20,10 @@ with open("day1_input.txt") as file:
 #     xyz_sum = inputs_list[x] + inputs_list[y] + inputs_list[z]
 
 # Better algorithm
-for x, y, z in itertools.product(inputs_list, inputs_list, inputs_list):
+for x, y, z in itertools.product(inputs_list, repeat=3):
     if x + y + z == 2020:
-        xyz = [x, y, z]
         xyz_sum = x + y + z
         product = x * y * z
-        print(f"{xyz[0]} + {xyz[1]} + {xyz[2]} = {xyz_sum}")
-        print(f"{xyz[0]} * {xyz[1]} * {xyz[2]} = {product}")
+        print(f"{x} + {y} + {z} = {xyz_sum}")
+        print(f"{x} * {y} * {z} = {product}")
         break
