@@ -1,6 +1,6 @@
 inputs_list = []
 
-with open("input.txt") as file:
+with open("day1_input.txt") as file:
     for line in file:
         line = int(line.strip())
         inputs_list.append(line)
