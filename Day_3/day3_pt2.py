@@ -41,7 +41,6 @@ product = s1_trees * s2_trees * s3_trees * s4_trees * s5_trees
 
 class ProductValidity(Exception):
     """Checks the validity of the product."""
-    pass
 
 
 try:
