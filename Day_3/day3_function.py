@@ -2,9 +2,7 @@ def check_trees(steps_right, steps_down):
     """Checks whether there is a tree on index [n], increments the tree count
     and resets the line if necessary, then returns the tree count"""
     lines = [line.strip() for line in open("day3_input.txt")]
-    trees_count = 0
-    index = 0
-    line_count = 0
+    trees_count, index, line_count = 0, 0, 0
     for line in lines:
         if line_count % steps_down == 0:
             if line[index] == "#":
