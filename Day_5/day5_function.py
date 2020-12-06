@@ -13,7 +13,10 @@ def find_id(line):
         if char == "L":  # Take lower half
             max_column -= (max_column - min_column) // 2
 
-    return min_row * 8 + min_column  # Return the ID number
+    id_num = min_row * 8 + min_column
+    if id_num is not None:
+        return id_num  # Return the ID number
+    return None
 
 
 def find_my_seat(seats_list):
