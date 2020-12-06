@@ -13,14 +13,14 @@ def find_id(line):
         if char == "L":  # Take lower half
             max_column -= (max_column - min_column) // 2
 
-    seat_id = min_row * 8 + min_column  # Calculate the ID number
-    return seat_id
+    return min_row * 8 + min_column  # Return the ID number
 
 
 def find_my_seat(seats_list):
+    """Find the isolated seat's ID."""
     n = 0
-    for index in seats_list:
-        if n < len(seats_list) - 1:  # Prevents index errors
-            if index + 1 != seats_list[n + 1] and index - 1 != seats_list[n - 1]:
-                return index
+    for index in seats_list[:-1]:  # Prevents index errors
+        # If the previous and next values arent part of the sequence (n-1, n, n+1)
+        if index + 1 != seats_list[n + 1] and index - 1 != seats_list[n - 1]:
+            return index  # This is my seat !
         n += 1
