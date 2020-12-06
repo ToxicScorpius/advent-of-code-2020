@@ -27,3 +27,4 @@ def find_my_seat(seats_list):
         if index + 1 != seats_list[n + 1] and index - 1 != seats_list[n - 1]:
             return index  # This is my seat !
         n += 1
+    return None
